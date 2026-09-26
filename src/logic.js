@@ -9,7 +9,8 @@ function cleanParagraph(text) {
     .trim()
     .replace(/^(here'?s|here is)[^:\n]*:\s*/i, "")
     .replace(/^\*\*[^*]+\*\*\s*/g, "")
-    .replace(/^(paragraph|continuation|ai|response)\s*\d*\s*:\s*/i, "")
+    .replace(/^(paragraph|continuation|ai|response|writer\s*\d)\s*\d*\s*:\s*/i, "")
+    .replace(/^\(you reply with only this\)\s*:?\s*/i, "")
     .split(/\n\s*\n/)[0]
     .trim()
     .replace(/^["']|["']$/g, "")
